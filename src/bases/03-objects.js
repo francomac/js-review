@@ -1,24 +1,18 @@
-
-
 const persona = {
-    nombre: 'Tony',
-    apellido: 'Stark',
-    edad: 45,
-    direccion: {
-        ciudad: 'New York',
-        zip: 523123,
-        lat: 14.3232,
-        lng: 34.456842
-    }
-}
+  nombre: "franco",
+  apellido: "mac",
+  edad: 45,
+  direccion: {
+    ciudad: "New York",
+    zipcode: "12345",
+    lat: "14.2342",
+    lng: "30.3423",
+  },
+};
 
+const persona2 = { ...persona }; // spread operator
 
-const persona2 = { ...persona };
+persona2.nombre = "leo";
 
-persona2.nombre = 'Peter'
-
-console.log(persona)
-console.log(persona2)
-
-
-
+console.log(persona2);
+console.log(persona);
