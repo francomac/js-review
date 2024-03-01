@@ -1,16 +1,12 @@
+const nombre = 'franco'
+const apellido = 'mac'
 
+const nombreCompleto = `${nombre} ${apellido}`
 
-const nombre = 'Fernando'
-const apellido = 'Herrera'
+console.log('%cindex.js line:6 nombreCompleto', 'color: #007acc;', nombreCompleto);
 
-const nombreCompleto = `${ nombre } ${ apellido }`
-
-// console.log(`Resultado: ${ 1 + 5 }`)
-
-function getSaludo( nombre ) {
+function getSaludo(nombre) {
     return 'Hola ' + nombre
 }
 
-
-console.log(`Este es un texto: ${ getSaludo(nombre) }`)
-
+console.log('%cindex.js line:12 Estes es un texto', 'color: #007acc;', `${ getSaludo(nombreCompleto)}`);
