@@ -1,26 +1,10 @@
 
+let nombre = 'franco' 
+const apellido = 'mac'
 
-const nombre   = 'Tony'
-const apellido = 'Stark'
+console.log('%cindex.js line:4 nombre', 'color: #007acc;', nombre);
 
-
-console.log( nombre, apellido )
-
-
-if ( true ) {
-    let nombre = '';
-    nombre = 'Peter'
+if (true) {
+    nombre = 'peter'
+    console.log('%cindex.js line:8 nombre', 'color: #007acc;', nombre);
 }
-
-
-console.log(nombre)
-
-
-
-
-
-
-
-
-
-
