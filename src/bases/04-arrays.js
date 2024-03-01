@@ -1,18 +1,16 @@
+const notCommonArray = new Array(100); // its not a definition very common
 
+const commonArray = [1, 2, 3];
+commonArray.push(5); // add to end
 
-const arreglo = [1,2,3,4]
-arreglo.push( 5 )
+const anotherCommonArray = [...commonArray]; // spread operator
+anotherCommonArray.push(6);
 
-const arreglo2 = [ ...arreglo ]
-arreglo2.push( 6 )
+const mappedArray = anotherCommonArray.map((n) => {
+  return n * 2;
+});
+mappedArray.push(14);
 
-const arreglo3 = arreglo2.map( function( n ){
-    return n * 2
-})
-
-arreglo3.push(14)
-
-
-console.log(arreglo)
-console.log(arreglo2)
-console.log(arreglo3)
+console.log("commonArray", commonArray);
+console.log("anotherCommonArray", anotherCommonArray);
+console.log("mappedArray", mappedArray);
