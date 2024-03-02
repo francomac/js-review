@@ -25,20 +25,16 @@ const heroes = [
 ];
 
 // option #1 using recursion
-let heroIndx = 0;
-const heroeExiste = (name) => {
-  if (name === heroes[heroIndx].name) {
-    heroIndx = 0;
-    return `${name} sí existe!`;
-  } else {
-    heroIndx = heroIndx < heroes.length - 1 ? heroIndx + 1 : 0;
-
-    if (heroIndx === 0) {
-      return `${name} NO existe!`;
-    }
-
-    return heroeExiste(name);
+const heroeExiste = (name, index = 0) => {
+  if (index >= heroes.length) {
+    return `${name} NO existe!`;
   }
+
+  if (name === heroes[index].name) {
+    return `${name} sí existe!`;
+  }
+
+  return heroeExiste(name, index + 1);
 };
 
 console.log(heroeExiste("Superman"));
