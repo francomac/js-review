@@ -1,16 +1,15 @@
+const characters = ["francomac", "goku", "vegeta"];
 
+const [sayayin, insecto, principe, sayaman = "goten"] = characters;
 
-const characters = ['Goku','Vegeta','Trunks', 'Goten']
+console.log("%cindex.js line:7 characters", "color: #007acc;", sayayin);
+console.log("%cindex.js line:7 characters", "color: #007acc;", insecto);
+console.log("%cindex.js line:7 characters", "color: #007acc;", principe);
+console.log("%cindex.js line:7 characters", "color: #007acc;", sayaman);
 
-const [ g, v, t, goten = 'No tiene valor'  ] = characters
+const returnArray = ([letters, numbers]) => {
+  return [letters, numbers];
+};
 
-
-const returnArray = ([ letters, numbers ]) => {
-    return [ letters , numbers ]
-}
-
-const [ letters, numbers ] = returnArray(['XYZ',987])
-
-console.log( letters, numbers )
-
-
+const [letters, numbers] = returnArray(["xyz", 123]);
+console.log(letters, numbers);
