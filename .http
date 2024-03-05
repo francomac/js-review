@@ -1,0 +1,2 @@
+GET api.giphy.com/v1/gifs/trending?api_key=3VRPtuzTPBydcxV9vypiSQ5g7mf0YUYd	 HTTP/1.1
+content-type: application/json
