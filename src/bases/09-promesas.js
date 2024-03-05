@@ -1,39 +1,55 @@
-import { getHeroById } from './bases/08-imp-exp'
+// ==============================================
 
-// console.log('Inicio')
-// new Promise( (resolve, reject) => {
-//     console.log('cuerpo de la promesa')
-//     resolve('Promesa resuelta')
+import { getHeroByOwner, getHeroById } from "./bases/08-imp-exp";
+
+// console.log(
+//   "%cindex.js line:20 getHeroById",
+//   "color: #007acc;",
+//   getHeroById(2)
+// );
+
+// console.log(
+//   "%cindex.js line:20 getHeroById",
+//   "color: #007acc;",
+//   getHeroByOwner("Marvel")
+// );
+
+// ==============================================
+// bare promise
+
+// console.log("inicio");
+
+// new Promise((resolve, reject) => {
+//   console.log("promise body");
+//   // resolve("promise resolved", true);
+//   reject("promise error", false);
 // })
-// .then( console.log )
-// .catch( console.log )
+//   .then((msg) => {
+//     console.log("resolved msg: ", msg);
+//   })
+//   .catch((err) => {
+//     console.log("error msg: ", err);
+//   });
 
-// console.log('Fin')
+// console.log("fin");
 
+// ==============================================
 
-const getHeroByIdAsync = (id) => {
-    return new Promise( ( resolve, reject )=> {
+const getHeroeById = (id) => {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const hero = getHeroById(id);
 
-        setTimeout(() => {
-           
-            const hero = getHeroById( id )
+      if (hero) {
+        resolve(hero);
+      } else {
+        reject(`${id} NO existe`);
+      }
+    }, 1800);
+  })
+    .then((heroFound) => console.log(heroFound))
+    .catch(console.log);
+};
 
-            if ( hero ) {
-                resolve( hero )
-            } else {
-                reject('Heroe no existe')
-            }
-
-        }, 1000);
-
-    });
-}
-
-
-
-getHeroByIdAsync(3)
-    .then( h => {
-        console.log(`El héroe es: ${ h.name }`)
-    })
-    .catch( console.log )
-
+getHeroeById(3);
+getHeroeById(33);
