@@ -18,3 +18,5 @@ giphyApi.get("/random").then((res) => {
   img.src = url;
   document.body.append(img);
 });
+
+export default giphyApi;
