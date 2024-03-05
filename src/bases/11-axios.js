@@ -1,36 +1,20 @@
-import axios from 'axios'
+import axios from "axios";
 
-
-const apiKey = 'YQnG8xqCyq2shbGATEpCX95u0Kb5biNc'
-// `https://api.giphy.com/v1/gifs/random?api_key=${ apiKey }`
+const apiKey = "3VRPtuzTPBydcxV9vypiSQ5g7mf0YUYd";
+// const url = `https://api.giphy.com/v1/gifs/trending?api_key=${apiKey}`;
 
 const giphyApi = axios.create({
-    baseURL: 'https://api.giphy.com/v1/gifs',
-    params: {
-        api_key: apiKey
-    }
-})
+  baseURL: "https://api.giphy.com/v1/gifs",
+  params: {
+    api_key: apiKey,
+  },
+});
 
-export default giphyApi
+giphyApi.get("/random").then((res) => {
+  const { data } = res.data;
+  const { url } = data.images.original;
 
-
-// giphyApi.get('/random')
-//     .then(( resp )=> {
-
-//         const { data } = resp.data
-//         const { url } = data.images.original
-
-
-        // const img = document.createElement('img')
-        // img.src = url
-
-        // document.body.append( img )
-
-//     })
-
-
-
-
-
-
-
+  const img = document.createElement("img");
+  img.src = url;
+  document.body.append(img);
+});
